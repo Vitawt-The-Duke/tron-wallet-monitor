@@ -1,9 +1,18 @@
 const fetch = require('node-fetch');
+const TelegramBot = require('node-telegram-bot-api');
 
-const TELEGRAM_BOT_TOKEN = '7385063605:AAHdVF21e8N8RPZEXnvCFkwPZ7BKKBkPR40';
-const TELEGRAM_CHAT_ID = '312928115';
-const TRON_WALLET_ADDRESS = 'TJ7hhYhVhaxNx6BPyq7yFpqZrQULL3JSdb';
-const CHECK_INTERVAL = 10000;
+const TELEGRAM_BOT_TOKEN = '';
+const TELEGRAM_CHAT_ID = '';
+const TRON_WALLET_ADDRESS = '';
+const CHECK_INTERVAL = 10000; 
+
+
+const bot = new TelegramBot(TELEGRAM_BOT_TOKEN, { polling: true });
+
+bot.onText(/\/myid/, (msg) => {
+    const chatId = msg.chat.id;
+    bot.sendMessage(chatId, `Your chat ID is: ${chatId}`);
+});
 
 async function checkTransfers() {
     try {
