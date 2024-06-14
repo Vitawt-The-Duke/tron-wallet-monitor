@@ -1,0 +1,1 @@
+This code is a custom alerter for receiving information about USDT transfers on a specific account. To receive information via a Telegram bot, you need to obtain your personal chat ID with the bot on Telegram.
