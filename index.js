@@ -1,10 +1,10 @@
 const fetch = require('node-fetch');
 const TelegramBot = require('node-telegram-bot-api');
 
-const TELEGRAM_BOT_TOKEN = '';
-const TELEGRAM_CHAT_ID = '';
-const TRON_WALLET_ADDRESS = '';
-const CHECK_INTERVAL = 10000; 
+const TELEGRAM_BOT_TOKEN = ''; //your bot token
+const TELEGRAM_CHAT_ID = ''; //your chat id
+const TRON_WALLET_ADDRESS = ''; //your wallet address
+const CHECK_INTERVAL = 10000; //interval in milliseconds
 
 
 const bot = new TelegramBot(TELEGRAM_BOT_TOKEN, { polling: true });
