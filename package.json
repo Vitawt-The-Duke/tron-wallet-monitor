@@ -1,0 +1,19 @@
+{
+    "name": "tron-wallet-monitor",
+    "version": "1.0.0",
+    "description": "A bot to monitor Tron wallet transactions and send notifications via Telegram",
+    "main": "monitor.js",
+    "scripts": {
+        "start": "node monitor.js"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "node-fetch": "^3.3.2",
+        "node-telegram-bot-api": "^0.58.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "author": "Woop-Woop",
+    "license": "MIT"
+}
