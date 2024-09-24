@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  tron-monitor:
+    build: .
+    environment:
+      TELEGRAM_BOT_TOKEN: "${TELEGRAM_BOT_TOKEN}"
+      TELEGRAM_CHAT_ID: "${TELEGRAM_CHAT_ID}"
+      TRON_WALLET_ADDRESSES: "${TRON_WALLET_ADDRESSES}"
+      CHECK_INTERVAL: "${CHECK_INTERVAL}"
+    volumes:
+      - .:/usr/src/app
+    restart: unless-stopped
