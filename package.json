@@ -7,11 +7,10 @@
       "start": "node monitor.js"
     },
     "dependencies": {
-      "node-fetch": "^2.6.7",  // Use the latest 2.x version since 3.x requires ESM
       "node-telegram-bot-api": "^0.58.0"
     },
     "engines": {
-      "node": ">=14.0.0"
+      "node": ">=18.0.0"
     },
     "author": "Woop-Woop",
     "license": "MIT"

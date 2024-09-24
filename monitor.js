@@ -1,10 +1,12 @@
-const fetch = require('node-fetch');
+// If you are using Node.js 18+, you can use the native fetch.
+// Otherwise, dynamically import node-fetch for older versions.
+const fetch = globalThis.fetch || ((...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args)));
 const TelegramBot = require('node-telegram-bot-api');
 
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN; //your bot token
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID; //your chat id
-const TRON_WALLET_ADDRESSES = process.env.TRON_WALLET_ADDRESSES.split(','); // comma-separated list of wallet addresses
-const CHECK_INTERVAL = process.env.CHECK_INTERVAL || 10000; // interval in milliseconds
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN; // Your bot token
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID; // Your chat ID
+const TRON_WALLET_ADDRESSES = process.env.TRON_WALLET_ADDRESSES.split(','); // Comma-separated list of wallet addresses
+const CHECK_INTERVAL = process.env.CHECK_INTERVAL || 10000; // Interval in milliseconds
 
 const bot = new TelegramBot(TELEGRAM_BOT_TOKEN, { polling: true });
 
@@ -16,7 +18,7 @@ bot.onText(/\/myid/, (msg) => {
 async function checkTransfers() {
     try {
         console.log('Checking transfers for multiple addresses...');
-        
+
         for (const TRON_WALLET_ADDRESS of TRON_WALLET_ADDRESSES) {
             const response = await fetch(`https://api.trongrid.io/v1/accounts/${TRON_WALLET_ADDRESS}/transactions/trc20?contractAddress=TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t&only_to=true&only_confirmed=true&limit=10&sort=-timestamp`);
             const data = await response.json();
