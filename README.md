@@ -126,7 +126,7 @@ The easiest way to get a group chat ID is through a Telegram desktop application
 In order to send a message to a specific topic on Telegram group, we need to get the topic ID.
 
 1. Similar to steps above, after we click the `Copy Message Link`, we will get a link like: `https://t.me/c/194xxxx987/11/13`, so the group Topic ID is `11`.
-1. Now we can use it like so (see `message_thread_id`): `https://api.telegram.org/bot783114779:AAEuRWDTFD2UQ7agBtFSuhJf2-NmvHN3OPc/sendMessage?chat_id=-100194xxxx987&message_thread_id=11&text=test123`
+1. Now we can use it like so (see `message_thread_id`): `https://api.telegram.org/bot7xxxxx779:AAEuRxxxxxxxxxxhJf2-NmvHN3OPc/sendMessage?chat_id=-100194xxxx987&message_thread_id=11&text=test123`
 1. When we set the bot token and chat id correctly, the message `test123` should be arrived inside our group chat topic.
     
 [Back to top &uarr;](#how-to-get-telegram-bot-chat-id)
