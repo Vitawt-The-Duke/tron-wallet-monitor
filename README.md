@@ -3,7 +3,7 @@
 To receive information via a Telegram bot, you need to obtain your personal chat ID with the bot on Telegram.
 
 At first you need to create your own bot in telegram. Just type @BotFather in search in Telegram
-At second add your bot token to this code and launch "node index.js"
+At second add your bot token, chat ID, interval ENVs to this code and launch "node monitor.js"
 
 
 
