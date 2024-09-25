@@ -7,6 +7,17 @@ services:
       TELEGRAM_CHAT_ID: "${TELEGRAM_CHAT_ID}"
       TRON_WALLET_ADDRESSES: "${TRON_WALLET_ADDRESSES}"
       CHECK_INTERVAL: "${CHECK_INTERVAL}"
-    volumes:
-      - .:/usr/src/app
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "128m"
+        max-file: "5"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 128M
+        reservations:
+          cpus: '0.2'
+          memory: 64M
